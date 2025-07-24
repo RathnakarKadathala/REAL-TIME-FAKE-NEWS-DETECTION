@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search History</title>
+</head>
+<body>
+    <h1>Search History</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Query</th>
+                <th>Prediction</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in history %}
+            <tr>
+                <td>{{ entry.query }}</td>
+                <td>{{ entry.prediction }}</td>
+                <td>{{ entry.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,35 @@
+FAKE NEWS DETECTION SYSTEM
+│
+├── app.py  (Flask Backend)
+│   ├── Loads model2.pkl  (Trained ML model)
+│   ├── Loads tfidfvect2.pkl  (TF-IDF vectorizer)
+│   ├── Uses NLTK (stopwords from nltk.txt)
+│   ├── Receives and processes user input
+│   ├── Predicts: REAL or FAKE
+│   └── Stores results in MongoDB
+│
+├── model2.pkl  (Scikit-learn trained classifier)
+│
+├── tfidfvect2.pkl  (TF-IDF text vectorizer)
+│
+├── nltk.txt
+│   └── List of stopwords used during text preprocessing
+│
+├── templates/ (HTML Pages - Not uploaded but assumed)
+│   ├── index.html (News input page)
+│   ├── result.html (Shows REAL or FAKE)
+│   ├── login.html / register.html (User auth)
+│   └── search_history.html (Displays past results)
+│
+├── MongoDB Atlas
+│   ├── Users Collection  (login/register info)
+│   └── Search Data Collection  (predicted news, results)
+│
+├── requirements.txt
+│   └── Lists all Python dependencies
+│
+├── Procfile
+│   └── Used for Heroku deployment (runs app with Gunicorn)
+│
+└── runtime.txt
+    └── Python version info (python-3.11.0)

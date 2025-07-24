@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Fake News Prediction</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<!-- Custom CSS -->
+	<style>
+		  
+        body {
+            background-color: #f4f7fc; /* Light background for better readability */
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+			padding: 20px;
+        }
+	    .nav-item{
+			padding-right: 20px;
+		}
+        .navbar-toggler-icon {
+            background-color: white !important;
+        }
+        .container {
+            max-width: 900px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        textarea {
+            resize: none;
+            min-height: 150px;
+        }
+        .btn-secondary {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background-color: #218838;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+        footer p {
+            margin: 0;
+        }
+        .card {
+            margin-top: 2rem;
+            border: none;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .card-body {
+            font-size: 1.1rem;
+        }
+		.pp{
+			padding: 10px;
+			text-align: center;
+		}
+    
+	</style>
+</head>
+
+<body>
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">Home</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('search_history') }}">Search_History</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Main Content -->
+	<div class="container text-center mt-5">
+		<h1 class="mb-4">Fake News Detector</h1>
+		<p>A machine learning-based web application to identify fake news. Enter a text below to check its authenticity.</p>
+		
+		<form action="/" method="POST" class="mt-4">
+			<div class="mb-3">
+				<textarea class="form-control" name="text" rows="5" placeholder="Write your text here..." required>{{ text }}</textarea>
+			</div>
+			<button type="submit" class="btn btn-secondary">Predict</button>
+		</form>
+
+		{% if result %}
+		<div class="mt-4">
+			<h4 class="text-warning">Prediction: {{ result }}</h4>
+		</div>
+		{% endif %}
+	</div>
+   
+	<!-- Footer -->
+	<footer class="bg-dark text-center text-white py-3 mt-5 ">
+		<p class="mb-0">&copy; 2024 Fake News Detector | All Rights Reserved</p>
+	</footer>
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

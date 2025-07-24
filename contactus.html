@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!--====== Bootstrap CSS ======-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!--====== Font Awesome ======-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <style>/* Main Container */
+        .about-container {
+            background-color: #f9f9f9; /* Light background for a clean look */
+            padding: 50px 0;
+        }
+        
+        /* Heading */
+        .about-container h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        /* Section Subheading */
+        .about-container h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+        
+        /* About Us Content */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+        
+        /* Key Information */
+        .about-content .key-info {
+            font-weight: bold;
+            color: #007bff;
+        }
+        
+        /* Image Section */
+        .about-image {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        .about-footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        
+        .about-footer p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        </style>
+</head>
+
+<body style="background-color: #f8f9fa;">
+
+   
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search_history">Search_History</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Contact Us Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <p class="text-center">If you're facing any issues or have any queries, please feel free to contact us by filling out the form below.</p>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="/submit-contact" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-dark text-white mt-5">
+        <div class="text-center p-3">
+            © 2024 Fake News Detector. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!--====== Bootstrap JS ======-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
